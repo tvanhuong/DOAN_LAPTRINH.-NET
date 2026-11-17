@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8D8F19E-6C5A-4A7B-9E33-87F95A1E5C12}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ThiTracNghiem</RootNamespace>
+    <AssemblyName>ThiTracNghiem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- DTO Layer -->
+    <Compile Include="DTO\NguoiDungDTO.cs" />
+    <Compile Include="DTO\MonHocDTO.cs" />
+    <Compile Include="DTO\CauHoiDTO.cs" />
+    <Compile Include="DTO\BaiThiDTO.cs" />
+    <!-- DAL Layer -->
+    <Compile Include="DAL\DatabaseHelper.cs" />
+    <Compile Include="DAL\NguoiDungDAL.cs" />
+    <Compile Include="DAL\MonHocDAL.cs" />
+    <Compile Include="DAL\CauHoiDAL.cs" />
+    <Compile Include="DAL\BaiThiDAL.cs" />
+    <!-- BLL Layer -->
+    <Compile Include="BLL\NguoiDungBLL.cs" />
+    <Compile Include="BLL\MonHocBLL.cs" />
+    <Compile Include="BLL\CauHoiBLL.cs" />
+    <Compile Include="BLL\BaiThiBLL.cs" />
+    <Compile Include="GUI\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmFlash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmFlash.Designer.cs">
+      <DependentUpon>frmFlash.cs</DependentUpon>
+    </Compile>
+    <!-- GUI Layer -->
+    <Compile Include="GUI\Session.cs" />
+    <Compile Include="GUI\frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyMonHoc.Designer.cs">
+      <DependentUpon>frmQuanLyMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyCauHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyCauHoi.Designer.cs">
+      <DependentUpon>frmQuanLyCauHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmThiTracNghiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmThiTracNghiem.Designer.cs">
+      <DependentUpon>frmThiTracNghiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmLichSuKetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmLichSuKetQua.Designer.cs">
+      <DependentUpon>frmLichSuKetQua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <!-- Program & AssemblyInfo -->
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUI\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmFlash.resx">
+      <DependentUpon>frmFlash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQuanLyMonHoc.resx">
+      <DependentUpon>frmQuanLyMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmThiTracNghiem.resx">
+      <DependentUpon>frmThiTracNghiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exam_system_splash_screen_mockup_fb520fd4_2K.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6332147959436351143.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset-password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exam-time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-information-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strategic-consulting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\split.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\split %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

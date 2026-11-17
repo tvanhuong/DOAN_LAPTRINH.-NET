@@ -1,0 +1,54 @@
+========================================================================
+HƯỚNG DẪN CÀI ĐẶT VÀ SỬ DỤNG PHẦN MỀM THI TRẮC NGHIỆM WINFORMS .NET
+Môn học: Lập trình .NET (TIE501) - Lớp: DH25PM
+========================================================================
+
+1. CẤU HÌNH VÀ CHUẨN BỊ CƠ SỞ DỮ LIỆU (SQL SERVER)
+------------------------------------------------------------------------
+Bước 1: Mở phần mềm SQL Server Management Studio (SSMS) trên máy trường.
+Bước 2: Mở file script "CSDL_ThiTracNghiem.sql".
+Bước 3: Bấm nút "Execute" (hoặc phím F5) để chạy script.
+        Script sẽ tự động:
+        - Tạo CSDL QL_ThiTracNghiem.
+        - Tạo các bảng: NguoiDung, MonHoc, CauHoi, BaiThi.
+        - Tạo các ràng buộc Khóa chính, Khóa ngoại.
+        - Nạp sẵn tài khoản test và ngân hàng câu hỏi mẫu phong phú.
+
+2. CHẠY CHƯƠNG TRÌNH TRÊN VISUAL STUDIO
+------------------------------------------------------------------------
+Bước 1: Mở file giải pháp "ThiTracNghiem.sln" bằng Visual Studio 2019/2022.
+Bước 2: Kiểm tra chuỗi kết nối trong file "App.config" (nằm trong project ThiTracNghiem):
+        Mặc định: Data Source=.;Initial Catalog=QL_ThiTracNghiem;Integrated Security=True;
+Bước 3: Nhấn phím F5 (hoặc nút Start) để biên dịch và khởi chạy chương trình.
+
+3. DANH SÁCH TÀI KHOẢN ĐĂNG NHẬP THỬ NGHIỆM
+------------------------------------------------------------------------
+A. Tài khoản Quản trị viên (ADMIN):
+   - Tài khoản: admin
+   - Mật khẩu:  admin123
+   - Quyền hạn: Quản lý môn học, Quản lý ngân hàng câu hỏi, Làm bài thi, 
+                Xem toàn bộ lịch sử thi và thống kê điểm của tất cả thí sinh.
+
+B. Tài khoản Thí sinh (THI SINH):
+   - Tài khoản: sinhvien1  |  Mật khẩu: 123456 (Nguyễn Văn An)
+   - Tài khoản: sinhvien2  |  Mật khẩu: 123456 (Trần Thị Bình)
+   - Tài khoản: sinhvien3  |  Mật khẩu: 123456 (Lê Hoàng Cường)
+   - Quyền hạn: Làm bài thi trắc nghiệm theo môn chọn, đếm ngược thời gian,
+                chấm điểm tự động và xem lại lịch sử các bài thi của chính mình.
+
+4. CÁC TÍNH NĂNG NỔI BẬT ĐÁP ỨNG QUY ĐỊNH ĐỒ ÁN
+------------------------------------------------------------------------
+1. Chuẩn MDI: Form cha frmMain quản lý các Form con, menu điều hướng rõ ràng,
+   phân quyền hiển thị tính năng theo vai trò người dùng (Admin / Thí sinh).
+2. Tối thiểu 4 Form nghiệp vụ chính:
+   - Form 1: Quản lý môn học (Thêm, Sửa, Xóa, Validation không để trống).
+   - Form 2: Quản lý ngân hàng câu hỏi (Lọc theo môn, 4 đáp án A-B-C-D, chọn đáp án đúng).
+   - Form 3: Làm bài thi trắc nghiệm (Chọn môn, Timer đếm ngược mm:ss, đổi màu câu đã làm,
+             tự động nộp bài khi hết giờ, nộp bài thủ công, tính điểm thang 10, hiển thị đáp án đúng sau khi nộp).
+   - Form 4: Lịch sử & Báo cáo kết quả (Lọc môn, xem chi tiết điểm số, thống kê điểm cao nhất, điểm trung bình).
+3. Kiểm tra ràng buộc (Validation):
+   - Sử dụng ErrorProvider hiển thị biểu tượng cảnh báo lỗi trực quan ngay cạnh các ô nhập liệu.
+4. Bố cục co giãn linh hoạt:
+   - Sử dụng Dock, Anchor, SplitContainer, TableLayoutPanel đảm bảo khi phóng to,
+     thu nhỏ cửa sổ không bị vỡ bố cục.
+========================================================================
